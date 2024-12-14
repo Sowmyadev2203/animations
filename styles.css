@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.traffic-light {
+  width: 60px;
+  height: 180px;
+  background-color: #333;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 20%;
+}
+
+.light {
+  width: 40px;
+  height: 40px;
+  margin: 10px 0;
+  border-radius: 50%;
+  background-color: #444;
+  transition: background-color 0.5s ease;
+}
+
+.red {
+  background-color: #ff0000;
+}
+
+.yellow {
+  background-color: #ffff00;
+}
+
+.green {
+  background-color: #008000;
+}
+
+.road {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  background-color: #333;
+}
+
+.car {
+  width: 50px;
+  height: 30px;
+  background-color: #ff0000;
+  position: absolute;
+  left: -60px;  
+  bottom: 10px;
+  border-radius: 5px;
+  animation: carMovement 15s infinite;
+}
+
+@keyframes carMovement {
+  0% {
+    left: -60px; 
+  }
+  10%, 100% {
+    left: -60px; 
+  }
+  30% {
+    left: 20%; 
+  }
+  50% {
+    left: 50%;
+  }
+  70% {
+    left: 80%;
+  }
+  90% {
+    left: 100%; 
+  }
+}
+
+
+@keyframes lightCycle {
+  0%, 10% {
+    
+    background-color: #ff0000;
+  }
+  10%, 30% {
+    background-color: #008000;
+  }
+  30%, 50% {
+    background-color: #ffff00;
+  }
+  50%, 100% {
+    background-color: #ff0000;
+  }
+}
+
+.traffic-light {
+  animation: lightCycle 15s infinite;
+}
+
+.red.active {
+  background-color: #ff0000;
+}
+
+.yellow.active {
+  background-color: #ffff00;
+}
+
+.green.active {
+  background-color: #008000;
+}
